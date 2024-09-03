@@ -1,0 +1,2 @@
+nano .gitattributes
+*.java text eol=lf
