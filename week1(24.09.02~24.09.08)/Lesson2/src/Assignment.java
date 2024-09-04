@@ -45,7 +45,7 @@ public class Assignment {
                 title = "[ Set으로 저장된 " + title + " ]"; // 제목
                 System.out.println(title);
                 // 입력한 모든 문장 앞에 번호를 붙여서 입력 순서에 맞게 모두 출력
-                Iterator iterator = strSet.iterator();
+                Iterator<String> iterator = strSet.iterator();
                 // Set은 순서를 유지하지 않고, 인덱스로 요소에 접근할 수 없기 때문에 get(int index) 메서드 사용 불가
                 // 그래서 Iterator를 사용한 순회로 각 요소에 하나씩 접근함
                 for (int i = 0; i < strSet.size(); i++) { // 입력한 레시피 단계가 모두 출력될 때까지 반복
@@ -58,7 +58,7 @@ public class Assignment {
 
             case "Map": // 입력한 자료구조 명이 Map인 경우
                 Map<Integer, String> strMap = new HashMap<>(); // 선언 + 생성
-                int lineNumber = -1;
+                int lineNumber = 1;
                 // Map은 내부적으로 순서를 보장하지 않음 -> 순서 반영을 위해 사용
                 //
                 while(true) { // 사용자가 "끝"이라고 입력할 때까지 계속 레시피를 입력 -> 횟수가 정해지지 않았기 때문에
@@ -85,10 +85,7 @@ public class Assignment {
 }
 
 // [Map]에 대한 의문점
-// 1. 왜 int lineNumber = -1 로 설정했는가?
-//
-//
-// 2. 아래 코드에서 왜 int i = 0으로 설정했는가?
+// 1. 아래 코드에서 왜 int i = 0으로 설정했는가?
 //          for (int i = 0; i < strMap.size(); i++) {
 //          int number = i + 1;
 //          System.out.println(number + ". " + strMap.get(i + 1));
