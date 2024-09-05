@@ -1,4 +1,4 @@
-
+package Class;
 //[우리가 클래스를 만들기 위해서는 4가지 STEP이 필요합니다.]
 //
 //1. 만들려고 하는 설계도를 선언합니다.
@@ -84,5 +84,9 @@ public class Car {
         for (double v : speeds) {
             System.out.println("v = " + v);
         }
+    }
+
+    public Tire setTire(Tire tire) {
+        return null;
     }
 }
