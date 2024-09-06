@@ -1,25 +1,34 @@
-package staticFolder;
-
-import Parameter.Door;
-import Parameter.Handle;
-import Parameter.Tire;
+package thisFolder;
 
 public class Car {
 
-    static String company = "GENESIS"; // 자동차 회사 : GENESIS
+    static final String COMPANY = "GENESIS"; // 자동차 회사 : GENESIS
     String model; // 자동차 모델
     String color; // 자동차 색상
     double price; // 자동차 가격
 
     double speed;  // 자동차 속도 , km/h
-    char gear; // 기어의 상태, P,R,N,D
+    char gear = 'P'; // 기어의 상태, P,R,N,D
     boolean lights; // 자동차 조명의 상태
 
-    Tire tire;
-    Parameter.Door door = new Door();
-    Parameter.Handle handle = new Handle();
 
-    public Car() {} // 기본 생성자
+    Tire tire = new Tire();
+    Door door = new Door();
+    Handle handle = new Handle();
+
+    public Car(String model) {
+        this(model, "Blue", 50000000);
+    }
+
+    public Car(String model, String color) {
+        this(model, color, 100000000);
+    }
+
+    public Car(String model, String color, double price) {
+        this.model = model;
+        this.color = color;
+        this.price = price;
+    }
 
     double gasPedal(double kmh, char type) {
         changeGear(type);
@@ -46,13 +55,7 @@ public class Car {
         System.out.println("빵빵");
     }
 
-    String getCompany() {
-        return "(주)" + company;
-    }
-
-    static String setCompany(String companyName) {
-        // System.out.println("자동차 모델 확인: " + model); // 인스턴스 필드 사용 불가
-        company = companyName;
-        return company;
+    Car returnInstance() {
+        return this;
     }
 }
