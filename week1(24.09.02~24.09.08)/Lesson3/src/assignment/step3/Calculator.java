@@ -1,9 +1,27 @@
-package assignment;
+package assignment.step3;
 
-// 1. 사칙 연산이 가능한 Assignment.Calculator ~ 2. 나머지 연산자(%) 도움
-public class Calculator {
+// 3. 클래스 나누기
+
+public class Calculator { // (1) 클래스 선언
+    // (2) 필드
+    private final AddOperation addOperation;
+    private final SubstractOperation substractOperation;
+    private final MultiplyOperation multiplyOperation;
+    private final DivideOperation divideOperation;
+
+    // (3) 생성자
+    public Calculator(AddOperation addOperation, SubstractOperation substractOperation, MultiplyOperation multiplyOperation, DivideOperation divideOperation) {
+        this.addOperation = addOperation;
+        this.substractOperation = substractOperation;
+        this.multiplyOperation = multiplyOperation;
+        this.divideOperation = divideOperation;
+    }
+    
+    // (4) 메서드
+
     public double calculate(String operator, int firstNumber, int secondNumber) {
-        // - 클래스: Assignment.Calculator - 리턴 타입이 double인 calculate 메서드를 받음
+        // - 클래스: Assignment.Calculator
+        // - 리턴 타입이 double calculate 메서드를 받음
         // - 메서드: calculate - String 타입의 operator 매개변수
         // - int 타입의 firstNumber, secondNumber 매개변수를 통해 피연산자 값을 받습니다.
         double answer = 0;
@@ -15,8 +33,6 @@ public class Calculator {
             answer = firstNumber * secondNumber;
         } else if (operator.equals("/")) {
             answer = firstNumber / secondNumber;
-        } else if (operator.equals("%")) { // 나머지 연산자(%)를 수행할 수 있게
-            answer = firstNumber % secondNumber;
         }
         return answer;
     };
