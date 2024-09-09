@@ -41,7 +41,7 @@ public class App {
                 }
 
                 // Calculator 클래스의 calculate 메서드를 통해 연산 수행
-                int result = calc.calculate(num1,num2,operator);
+                int result = calc.calculate(num1, num2, operator);
 
                 // 결과 출력
                 System.out.println("결과: " + result);
@@ -51,10 +51,11 @@ public class App {
                 String answer = sc.next();
                 if (answer.equals("Exit")) {
                     break;
-                    }
                 }
-            catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("유효한 값이 아닙니다.");
+            } catch (ArithmeticException e) {
+                System.out.println("0으로 나눌 수 없습니다.");
             }
         }
         // 저장된 모든 연산 결과 출력
