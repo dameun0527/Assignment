@@ -27,14 +27,8 @@ public class Calculator {
                 result = num1 * num2;
                 break;
             case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
-                }
+                result = num1 / num2;
                 break;
-            default:
-                throw new IllegalArgumentException("잘못된 연산자입니다. +, -, *, / 중 하나를 입력해주세요: ");
         }
 
         // 결과를 리스트에 저장
