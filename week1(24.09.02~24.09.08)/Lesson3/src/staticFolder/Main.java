@@ -8,7 +8,7 @@ public class Main {
         Car.company = "Audi";
         System.out.println(Car.company + "\n");
 
-        // 클래스 메서드 호출
+        // 클래스 메소드 호출
         String companyName = Car.setCompany("Benz");
         System.out.println("companyName = " + companyName);
 

@@ -13,19 +13,25 @@ Java 문법 종합반 강의를 수강하고, 배운 내용을 기반으로 하�
 
 
 ## ⏲ 개발 기간
+#### < Task Progress >
 
-2024.09.02 ~ 2024.09.10.
+|        Date         | Progress                                                                                |
+|:-------------------:|-----------------------------------------------------------------------------------------|
+| 24.09.02 ~ 24.09.06 | Java 문법 종합반 강의 3주차까지 수강 후 각 주차별 과제 제출<br>개인 과제 요구 사항 이해 및 기반 설계<br>배운 내용 및 이해 안되는 부분 복습 |
+| 24.09.07 ~ 24.09.09 | 필수 구현 과제 마무리, README 작성 시작                                                      |
+| 24.09.09 ~ 24.09.10 | 과제 코드 일부(주석 포함) 수정, README 수정, 트러블슈팅 작성                                    |
+| 24.09.11 ~ | 과제 제출!!!!!!!!!!!!!! |
 
 ## 📋 목차
 
-- [1️⃣ 기획편 - 요구 사항 정의 및 설계](#1-기획편)
+1️⃣ 기획편 - 요구 사항 정의 및 설계](#1-기획편)
 
-- 2️⃣ 설계 및 개발편 - 단계별 필수 기능 구현을 위한 코딩
-    - [Step 1. 필수 기능: Lv 1.](#lv-1-클래스-없이-기본적인-연산을-수행할-수-있는-계산기-만들기)
-    - [Step 1. 필수 기능: Lv 2.](#lv-2-클래스를-적용해-기본적인-연산을-수행할-수-있는-계산기-만들기)
-    - [Step 2. 도전 기능: Lv 3.](#lv-3-enum-제네릭-람다--스트림을-이해한-계산기-만들기)
+2️⃣ 설계 및 개발편 - 단계별 필수 기능 구현을 위한 코딩
+- [Step 1. 필수 기능: Lv 1.](#lv-1-클래스-없이-기본적인-연산을-수행할-수-있는-계산기-만들기)
+- [Step 1. 필수 기능: Lv 2.](#lv-2-클래스를-적용해-기본적인-연산을-수행할-수-있는-계산기-만들기)
+- [Step 2. 도전 기능: Lv 3.](#lv-3-enum-제네릭-람다--스트림을-이해한-계산기-만들기) - 미완성
 
-- 3️⃣ [고찰 및 회고 편 - 힘들거나 어려웠던 부분 및 소감](#3-고찰-및-회고-편)
+3️⃣ [고찰 및 회고 편 - 힘들거나 어려웠던 부분 및 소감](#3-고찰-및-회고-편)
 
 <br>
 
@@ -71,13 +77,9 @@ public class App {
                     System.out.println("0 이상의 정수를 입력해주세요.");
                     continue;
                 }
-
                 // 연산 기호 입력
                 System.out.println("사칙연산 기호를 입력하세요: ");
                 char operator = sc.next().charAt(0);
-
-
-
                 // 두 번째 숫자 입력
                 System.out.println("두 번째 숫자를 입력하세요: ");
                 int num2 = Integer.parseInt(sc.next());
@@ -86,22 +88,18 @@ public class App {
                     System.out.println("0 이상의 정수를 입력해주세요.");
                     continue;
                 }
-
                 // 연산 수행 및 결과 출력
                 int result = 0;
                 switch (operator) {
                     case '+':
                         result = num1 + num2;
                         break;
-
                     case '-':
                         result = num1 - num2;
                         break;
-
                     case '*':
                         result = num1 * num2;
                         break;
-
                     case '/':
                         // 예외 처리
                         if (num2 == 0) {
@@ -133,29 +131,22 @@ public class App {
 
 </details>
 
-**_[과제에서 명시한 Check_Point + @: 내 생각대로 정리]_**
+✔ App 클래스 설계하기
 
-
-1.  **<span style="color: #8a3db6;">입력값(숫자) 조건</span>**: 양의 정수(0 포함)를 입력받기
-    - 키워드: `Scanner`, `int`,`필드`
-
-2.  **<span style="color: #8a3db6;">입력값(연산기호) 조건</span>**: 사칙연산 기호(➕,➖,✖️,➗)를 입력받기
-    -   키워드: `Scanner`, `char`
-
-3.  **<span style="color: #8a3db6;">연산 메소드 구현 조건</span>**
-    -   키워드: `if`, `else`, `switch`, `case`, `break`, `continue`
-    -   사칙연산 기호에 맞는 연산자를 사용하여 연산 진행
-    -   입력 받은 연산 기호를 구분하기 위해 제어문을 사용
-    -   연산 오류가 발생한 경우 해당 오류에 대한 내용을 정제하여 출력
-
-4.  **<span style="color: #8a3db6;">main 메소드의 무한 반복 루트 구현 조건</span>**
-    -   키워드 : `while`, `종료`
-
-5. 그 외 **_혼자 생각한 예외 처리_**
-    - 나눗셈 - 0으로 나누는 경우
-    - 숫자가 아닌 문자열을 입력하는 경우
-    - 양의 정수 외에 다른 값을 입력하는 경우 (ex. 음의 정수)
-    - 
+1. 전체적인 구조: 필요한 기능이 무엇인지 파악하기
+   - 한 클래스 내에서 연산 / 입출력 모두 처리 
+   - 입력값 관련 조건 부여(변수 저장 방식 등)
+   - 연산자 종류별 연산 수행 메소드 
+   - 연산 종료는 특정 키워드 입력 시에만 
+   - 연산 오류 발생 시 에러 처리 방식
+2. 주요 로직 구현하기 (콘솔 기반)
+3. 세부적인 설계하기
+   - 항목별 주요 키워드
+       - 클래스: `public`
+       - 메소드: `public`, `static`, `void`
+       - 입력 처리: `Scanner`, `int`, `Integer`, `next()`, `char`, `parseInt()`, `charAt()` 
+       - 제어문: `while`, `switch`, `break`
+       - 예외 처리: `if`, `continue`, `try-catch`
 
 
 ##### **Lv 2. 클래스를 적용해 기본적인 연산을 수행할 수 있는 계산기 만들기**
@@ -211,7 +202,7 @@ public class Calculator {
         return new ArrayList<>(results); // 결과 리스트를 복사해서 반환
     }
 
-    // Setter 메소드: 외부에서 연산 결과 리스트를 설정
+    // Setter 메소드: 외부에서 연산 결과 리스트를 수정
     public void setResults(List<Integer> results) {
         this.results = new ArrayList<>(results);
         // 리스트를 복사하는 이유:
@@ -233,6 +224,21 @@ public class Calculator {
 
 </details>
 
+✔ Calculator 클래스 설계하기
+
+1. 전체적인 구조 짜기: 주석으로 표시
+   - 연산 수행 메소드 (사칙연산)
+   - 연산 결과를 저장하는 컬렉션 타입 필드
+   - 연산 결과 저장 필드 캡슐화
+   - 외부에서 캡슐화 된 필드로 간접 접근 후 결과값 가져오기 / 수정하기 / 제거하기
+2. 주요 로직 구현하기 (콘솔 기반)
+3. 세부적인 설계하기
+    - 항목별 주요 키워드
+        - 필드: `컬렉션`, `List`, `private`, `Integer`
+        - 생성자: `public`, `this`, `ArrayList -> 이후 필요한 모든 인터페이스 메소드 고려`
+        - 메소드: `int`, `char`, `switch`,`return`
+        - 추가 요구 사항: `getter`, `setter`, `isEmpty`, `remove`
+
 
 [App.java]
 <details>
@@ -246,13 +252,13 @@ public class App {
         // Calculator class에서 객체 호출 > 객체 초기화
         // 인스턴스화
         Calculator calc = new Calculator();
-
         // sc 변수 선언 + Scanner 객체 생성 
         Scanner sc = new Scanner(System.in);
         
         // 반복문 시작
         while (true) {
-            try {
+            // 예외 처리의 `try-catch`
+            try { 
                 // 첫 번째 숫자 입력
                 System.out.println("첫 번째 숫자를 입력하세요: ");
                 // sc.next()로 입력된 값: 문자열 > .parseInt()를 통해 int로 변환
@@ -298,9 +304,9 @@ public class App {
                 if (answer.equals("Exit")) {
                     break;
                 }
-            } catch (NumberFormatException e) { // 예외처리
+            } catch (NumberFormatException e) { // 예외처리 1: 입력 값이 숫자가 아닐 때
                 System.out.println("유효한 값이 아닙니다.");
-            } catch (ArithmeticException e) {
+            } catch (ArithmeticException e) { // 예외처리 2: 나눗셈 과정에서 분모값에 0을 입력했을 때
                 System.out.println("0으로 나눌 수 없습니다.");
             }
         }
@@ -335,28 +341,43 @@ public class App {
 
 </details>
 
-**_[과제에서 명시한 Check_Point + @: 내 생각대로 정리]_**
-
-✔ Calculator 클래스 설계하기
-
-1. 전체적인 뼈대 구조 짜기
-
-2. 세부적인 조건 추가
-   - 항목별 키워드
-     - 필드: `컬렉션`, `List`, `private`, `Integer`
-     - 생성자: `public`, `this`, `ArrayList -> 이후 필요한 모든 인터페이스 메소드 고려`
-     - 메소드: `int`, `매개변수`, `switch`,`return`,`예외처리`
-     - 추가 요구 사항: `getter`, `setter`
-
-
 ✔ App 클래스 설계하기
 
-1. 전체적인 뼈대 구조 짜기
+1. 전체적인 구조 짜기: 주석으로 표시
+    - 주요 연산 메소드를 호출하기 위한 객체 생성 / 인스턴스화
+    - 입력값 구분 및 예외 처리를 위한 제어문
+    - 저장된 연산 결과를 가져오고, 수정하고, 제거하는 메소드를 호출하여 결과값 출력
+2. 주요 로직 구현하기 (콘솔 기반)
+3. 세부적인 설계하기
+   - 항목별 주요 키워드
+        - 클래스 및 객체 초기화
+        - 입력 처리: `Scanner`, `int`, `Integer`, `next()`, `char`, `parseInt()`, `charAt()`
+        - 제어문: `while`, `if`, `.equals()`, `break`, `continue`
+        - 예외 처리: `try-catch`, `NumberFormatException`, `ArithmeticException`
+        - 추가 요구 사항: `getter: .getResults`, `setter: setResults`, `remove: removeResults`
    
 
 #### Step 2. 도전 기능 가이드
 ##### **Lv 3. Enum, 제네릭, 람다 & 스트림을 이해한 계산기 만들기**
 
-###  3️⃣ 고찰 및 회고 편
+후에 시간이 된다면 좀 더 공부해서 도전해보기로 함.
+
+###  3️⃣ 고찰 및 회고편
+#### 회고
+
+[자세한 이야기는 블로그로.]
+
+- 코드에 대해 모르는 것이 너무 많아서 매번 찾는 데에 시간을 너무 많이 뺏겼다.
 
 
+- 예외 처리 과정에서, `throw`가 매우 간결하고 좋은 메소드라는 것을 새로 알게 됐지만, 공부용으로 `if`도 넣어보고, 처음으로 `try-catch` 구문
+도 써봤다. 
+
+
+
+#### 개선하고 싶은 점이 있다면?
+
+1. 데스크탑이나 휴대폰 어플리케이션에 있는 계산기의 연속적인 연산 기능
+2. 좀 더 다양한 연산자와 부호, 입력값에 따른 다양한 연산 메소드 구현
+2. 연산 결과 값을 저장하고, 저장된 결과 값으로 되돌아가는 기능 (예를 들면 문서나 포토샵 작업 같은 프로그램에서 Ctrl + Z 기능이나 작업 내역 기능; 횟수 제한 있음)
+3. GUI와 연결

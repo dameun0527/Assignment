@@ -15,7 +15,7 @@ public class W13 {
         System.out.println("B 입력: ");
         String bHand = sc.nextLine();
 
-        // 두 개의 값을 비교하는 메서드 -> Objects.equals(좌, 우) : 좌, 우가 같은 경우 true, 다른 경우 false
+        // 두 개의 값을 비교하는 메소드 -> Objects.equals(좌, 우) : 좌, 우가 같은 경우 true, 다른 경우 false
         if (Objects.equals(aHand,"가위")){
             if (Objects.equals(bHand,"가위")) {
                 System.out.println("A와 B는 비겼습니다.");

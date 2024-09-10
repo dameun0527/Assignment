@@ -10,7 +10,7 @@ public class Main {
         // 자식 클래스 스포츠카 객체 생성
         SportsCar sportsCar = new SportsCar("Orion");
 
-        // 오버라이딩한 brakePedal(), horn() 메서드 호출
+        // 오버라이딩한 brakePedal(), horn() 메소드 호출
         sportsCar.brakePedal();
         sportsCar.horn();
 

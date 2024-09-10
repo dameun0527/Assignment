@@ -17,7 +17,7 @@ public class Arr01 {
         System.out.println("---------");
 
         // (2) 다건 조회(important!)
-        // length : 길이를 구하는 메서드
+        // length : 길이를 구하는 메소드
         for (int i = 0; i<intArray2.length; i++) {
             System.out.println(intArray2[i]);
         }

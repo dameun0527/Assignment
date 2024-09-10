@@ -46,7 +46,7 @@ public class Assignment {
                 System.out.println(title);
                 // 입력한 모든 문장 앞에 번호를 붙여서 입력 순서에 맞게 모두 출력
                 Iterator<String> iterator = strSet.iterator();
-                // Set은 순서를 유지하지 않고, 인덱스로 요소에 접근할 수 없기 때문에 get(int index) 메서드 사용 불가
+                // Set은 순서를 유지하지 않고, 인덱스로 요소에 접근할 수 없기 때문에 get(int index) 메소드 사용 불가
                 // 그래서 Iterator를 사용한 순회로 각 요소에 하나씩 접근함
                 for (int i = 0; i < strSet.size(); i++) { // 입력한 레시피 단계가 모두 출력될 때까지 반복
                     int number = i + 1;

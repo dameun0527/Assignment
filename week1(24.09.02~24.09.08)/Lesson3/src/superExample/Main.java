@@ -11,7 +11,7 @@ public class Main {
         System.out.println("sportsCar.price = " + sportsCar.price); // 3.0E8
         System.out.println();
 
-        // setCarInfo 메서드 호출해서 부모 및 자식 필드 값 저장
+        // setCarInfo 메소드 호출해서 부모 및 자식 필드 값 저장
         sportsCar.setCarInfo("GV80", "Black", 50000000);
 
         // this.price = price; 결과 확인
@@ -19,7 +19,7 @@ public class Main {
         System.out.println();
 
         // super.model = model; super.color = color;
-        // 결과 확인을 위해 자식 클래스 필드 model, color 확인 & 부모 클래스 메서드인 getModel(), getColor() 호출
+        // 결과 확인을 위해 자식 클래스 필드 model, color 확인 & 부모 클래스 메소드인 getModel(), getColor() 호출
         // 자식 클래스 필드 값은 변화 없음.
         System.out.println("sportsCar.model = " + sportsCar.model); // Ferrari
         System.out.println("sportsCar.color = " + sportsCar.color); // Red
