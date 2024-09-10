@@ -1,6 +1,6 @@
 # [Spring 3기] Ch 2. 계산기 만들기
 
-![enter image description here](https://cdn.pixabay.com/photo/2018/06/05/23/44/pay-3456736_1280.jpg)
+![enter image description here](poster.jpg)
 
 # 📁 과제 소개
 
