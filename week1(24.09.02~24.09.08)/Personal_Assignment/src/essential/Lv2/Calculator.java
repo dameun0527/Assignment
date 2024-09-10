@@ -11,7 +11,7 @@ public class Calculator {
     public Calculator() {
         this.results = new ArrayList<>(); // 결과를 저장할 ArrayList 생성
     }
-    // 사칙 연산 수행 담당 메서드
+    // 사칙 연산 수행 담당 메소드
     public int calculate(int num1, int num2, char operator) {
         int result = 0;
 
@@ -38,12 +38,12 @@ public class Calculator {
         return result;
     }
 
-    // Getter 메서드: 저장된 연산 결과를 반환
+    // Getter 메소드: 저장된 연산 결과를 반환
     public List<Integer> getResults() {
         return new ArrayList<>(results); // 결과 리스트를 복사해서 반환
     }
 
-    // Setter 메서드: 외부에서 연산 결과 리스트를 설정
+    // Setter 메소드: 외부에서 연산 결과 리스트를 수정
     public void setResults(List<Integer> results) {
         this.results = new ArrayList<>(results);
         // 리스트를 복사하는 이유:
