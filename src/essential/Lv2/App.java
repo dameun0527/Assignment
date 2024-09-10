@@ -70,15 +70,20 @@ public class App {
         System.out.println("모든 연산 결과: " + calc.getResults());
         System.out.println("----------------");
 
-        // Setter 메소드: 연산 결과 수정해보기
+        // 새로운 리스트 생성 > 추가된 값이 내부(results)에 영향 주지 않기 위해
         List<Integer> newResults = new ArrayList<>();
+        // 새로운 값 추가
         newResults.add(10);
+        // calc 객체의 setResults 호출 > newResults 저장(results 수정)
         calc.setResults(newResults);
+        // 새로 수정된 newResults를 getResults 메소드로 호출
         System.out.println("수정된 연산 결과: " + calc.getResults());
 
 
         System.out.println("가장 먼저 저장된 데이터를 삭제합니다.");
+        // Calculator 클래스에서 구현한 remove 메소드 호출
         calc.removeResults();
+        // 삭제를 반영한 결과값 getResults로 호출
         System.out.println("삭제 후 저장된 결과: " + calc.getResults());
 
         sc.close();

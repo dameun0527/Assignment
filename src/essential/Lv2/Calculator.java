@@ -2,16 +2,16 @@ package essential.Lv2;
 
 import java.util.*;
 public class Calculator {
-    // <필드 영역>
-    // 연산 결과를 저장하는 컬렉션 타입 필드 ->
+    // [1. 필드 영역]
+    // 연산 결과를 저장하는 컬렉션 타입 필드
     // results 변수 -> List<Integer> 타입으로 선언
     private List<Integer> results;
 
-    // <객체 데이터: 생성자>
+    // [2. 객체 데이터: 생성자]
     public Calculator() {
         this.results = new ArrayList<>(); // 결과를 저장할 ArrayList 생성
     }
-    // 사칙 연산 수행 담당 메소드
+    // [3. 연산 수행 담당 메소드]
     public int calculate(int num1, int num2, char operator) {
         int result = 0;
 
