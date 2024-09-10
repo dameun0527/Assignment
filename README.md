@@ -160,7 +160,7 @@ import java.util.*;
 // [전체적인 구조 명시]
 public class Calculator {
     // [1. 필드]
-    // 연산 결과를 저장하는 컬렉션 타입 필드 ->
+    // 연산 결과를 저장하는 컬렉션 타입 필드
     // results 변수 -> List<Integer> 타입으로 선언
     private List<Integer> results;
 
@@ -328,8 +328,9 @@ public class App {
         
         
         System.out.println("가장 먼저 저장된 데이터를 삭제합니다.");
-        // Calculator 클래스에서 구현한 메소드 호출
+        // Calculator 클래스에서 구현한 remove 메소드 호출
         calc.removeResults();
+        // 삭제를 반영한 결과값 getResults로 호출
         System.out.println("삭제 후 저장된 결과: " + calc.getResults());
 
         // 스캐너 종료
